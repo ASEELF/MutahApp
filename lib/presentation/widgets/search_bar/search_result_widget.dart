@@ -34,30 +34,30 @@ class SearchResultWidget extends StatelessWidget {
             ],
           ),
           child: ListView.builder(
-            itemCount: filteredCourses.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(filteredCourses[index]),
-                onTap: () {
-                  print('Tapped on: ${filteredCourses[index]}');
-                  if (filteredCourses[index] == 'طلباتي') {
-                    print('Navigating to myRequestsRoute');
-                    Navigator.pushNamed(context, Routes.myRequestsRoute);
-                  }
-                },
-                // Optional: Add icons or trailing widgets for more interactivity
-                leading: Icon(Icons.school), // Example icon
-                trailing: Icon(Icons.arrow_forward),
-              );
-            },
-          )
-
-
-
-
-
-
+          shrinkWrap: true,
+          physics: ClampingScrollPhysics(),
+          itemCount: filteredCourses.length,
+          itemBuilder: (context, index) {
+            print('Building item: ${filteredCourses[index]}');
+            return GestureDetector(
+              onTap: () {
+                print('Tapped on: ${filteredCourses[index]}');
+                if (filteredCourses[index] == AppStrings.myRequests) {
+                  print('Navigating to myRequestsRoute');
+                  Navigator.pushNamed(context, Routes.myRequestsRoute);
+                }
+              },
+              child: Container(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  filteredCourses[index],
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+            );
+          },
         ),
+      ),
       ),
     );
   }
