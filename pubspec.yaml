@@ -30,11 +30,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  animated_toggle_switch: ^0.8.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  curved_navigation_bar: ^1.0.3
+  get: ^4.6.5
+  flutter_typeahead: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +65,22 @@ flutter:
   assets:
      - assets/images/splash_logo.png
      - assets/images/background_screen.png
+     - assets/images/profile_avatar.png
+     - assets/icons/academic_plan.png
+     - assets/icons/announcement_filled.png
+     - assets/icons/announcement_outlined.png
+     - assets/icons/fees_registration.png
+     - assets/icons/home_filled.png
+     - assets/icons/home_outlined.png
+     - assets/icons/lock.png
+     - assets/icons/marks.png
+     - assets/icons/menu.png
+     - assets/icons/myorders.png
+     - assets/icons/profile_filled.png
+     - assets/icons/profile_login_username.png
+     - assets/icons/profile_outlined.png
+     - assets/icons/schedule.png
+     - assets/icons/search.png
      - assets/fonts/markazi/MarkaziText-Bold.ttf
      - assets/fonts/markazi/MarkaziText-Medium.ttf
      - assets/fonts/markazi/MarkaziText-Regular.ttf

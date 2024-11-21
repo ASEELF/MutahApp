@@ -17,6 +17,7 @@ class AppStrings {
   static const String home = "الرئيسية";
   static const String myProfile = "حسابي";
   static const String announcements = "الإعلانات";
+  static const String search = "بحث";
 
 
 

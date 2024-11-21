@@ -15,13 +15,13 @@ TextStyle _getTextStyle(
 // regular style for 2 fonts
 
 TextStyle getFirstRegularStyle(
-    {double fontSize = FontSize.s18, required Color color}) {
+    {double fontSize = FontSize.s20, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.firstFontFamily, FontWeightManager.regular, color);
 }
 
 TextStyle getSecondRegularStyle(
-    {double fontSize = FontSize.s18, required Color color}) {
+    {double fontSize = FontSize.s20, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.secondFontFamily, FontWeightManager.regular, color);
 }
@@ -30,14 +30,14 @@ TextStyle getSecondRegularStyle(
 // medium text style for 2 fonts
 
 TextStyle getFirstMediumStyle(
-    {double fontSize = FontSize.s20, required Color color}) {
+    {double fontSize = FontSize.s22, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.firstFontFamily, FontWeightManager.medium, color);
 }
 
 
 TextStyle getSecondMediumStyle(
-    {double fontSize = FontSize.s20, required Color color}) {
+    {double fontSize = FontSize.s22, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.secondFontFamily, FontWeightManager.medium, color);
 }
@@ -45,14 +45,14 @@ TextStyle getSecondMediumStyle(
 // semi bold text style for 2 fonts
 
 TextStyle getFirstSemiBoldStyle(
-    {double fontSize = FontSize.s26, required Color color}) {
+    {double fontSize = FontSize.s28, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.firstFontFamily, FontWeightManager.semiBold, color);
 }
 
 
 TextStyle getSecondSemiBoldStyle(
-    {double fontSize = FontSize.s26, required Color color}) {
+    {double fontSize = FontSize.s24, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.secondFontFamily, FontWeightManager.semiBold, color);
 }
