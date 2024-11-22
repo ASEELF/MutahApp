@@ -1,11 +1,13 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
 import 'package:mutahapplication/presentation/resources/routes_manager.dart';
 import 'package:mutahapplication/presentation/resources/string_manager.dart';
 
 class SearchResultWidget extends StatelessWidget {
   final List<String> filteredCourses;
-
 
   SearchResultWidget({required this.filteredCourses});
 
@@ -34,31 +36,57 @@ class SearchResultWidget extends StatelessWidget {
             ],
           ),
           child: ListView.builder(
-          shrinkWrap: true,
-          physics: ClampingScrollPhysics(),
-          itemCount: filteredCourses.length,
-          itemBuilder: (context, index) {
-            print('Building item: ${filteredCourses[index]}');
-            return GestureDetector(
-              onTap: () {
-                print('Tapped on: ${filteredCourses[index]}');
-                if (filteredCourses[index] == AppStrings.myRequests) {
-                  print('Navigating to myRequestsRoute');
-                  Navigator.pushNamed(context, Routes.myRequestsRoute);
-                }
-              },
-              child: Container(
-                padding: EdgeInsets.all(16),
-                child: Text(
-                  filteredCourses[index],
-                  style: TextStyle(fontSize: 16),
+            shrinkWrap: true,
+            physics: ClampingScrollPhysics(),
+            itemCount: filteredCourses.length,
+            itemBuilder: (context, index) {
+              String course = filteredCourses[index];
+              return GestureDetector(
+                onTap: () {
+                  switch (course) {
+                    case AppStrings.academicPlan:
+                      print('Navigating to academic plan');
+                      Get.toNamed(Routes.academicPlan); // Navigate to academic plan
+                      break;
+
+                    case AppStrings.myRequests:
+                      print('Navigating to my requests');
+                      Get.toNamed(Routes.myRequestsRoute); // Navigate to my requests
+                      break;
+
+                    case AppStrings.schedule:
+                      print('Navigating to schedule');
+                      Get.toNamed(Routes.schedule); // Navigate to schedule
+                      break;
+
+                    case AppStrings.hoursFees:
+                      print('Navigating to tuition fees');
+                      Get.toNamed(Routes.hoursFees); // Navigate to tuition fees
+                      break;
+
+                    case AppStrings.marks:
+                      print('Navigating to marks');
+                      Get.toNamed(Routes.marks); // Navigate to marks
+                      break;
+
+                    default:
+                      print('No route found for: $course');
+                      break;
+                  }
+                },
+                child: Container(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    course,
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
-      ),
       ),
     );
   }
 }
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mutahapplication/app/background.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
 import 'package:mutahapplication/presentation/resources/routes_manager.dart';
@@ -63,8 +64,10 @@ class _LoginViewState extends State<LoginView> {
                 const BuildRememberMeCheckbox(),
                 const SizedBox(height: 40),
                 LoginButton(onPressed: (){
-                  Navigator.pushReplacementNamed(context, Routes.mainRoute);
-                  //
+                  Get.offNamed(Routes.mainRoute);
+                  //this way is using the normal navigator from flutter using context
+                 //  Navigator.pushReplacementNamed(context, Routes.mainRoute);
+
                 },),
               ],
             ),

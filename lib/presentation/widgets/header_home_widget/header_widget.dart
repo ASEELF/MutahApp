@@ -4,8 +4,7 @@ import 'package:mutahapplication/presentation/resources/assets_manager.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
 import 'package:mutahapplication/presentation/resources/string_manager.dart';
 import 'package:mutahapplication/presentation/resources/styles_manager.dart';
-import 'package:mutahapplication/presentation/widgets/search_bar/search_widget.dart';
-import 'search_bar/search_bar_widget.dart';
+
 
 class HeaderWidget extends StatelessWidget {
   final String username;
@@ -47,6 +46,7 @@ class HeaderWidget extends StatelessWidget {
           right: 26,
           child: GestureDetector(
             onTap: () {
+              print("tapped");
               Scaffold.of(context).openDrawer();
             },
             child: Image.asset(

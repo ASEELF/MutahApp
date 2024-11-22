@@ -9,6 +9,7 @@ class ColorManager {
   static Color white = HexColor.fromHex("#FFFFFF");
   static Color green = HexColor.fromHex("#00A86B");
   static Color mediumgrey = HexColor.fromHex("6A6A6A");
+  static Color lightBlack = HexColor.fromHex("333333");
 }
 
 extension HexColor on Color {
