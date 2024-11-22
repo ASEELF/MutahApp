@@ -23,4 +23,5 @@ class IconAssets{
   static const String marksRecord ="$ICON_PATH/marks.png" ;
   static const String menu ="$ICON_PATH/menu.png" ;
   static const String lock ="$ICON_PATH/lock.png" ;
+  static const String back ="$ICON_PATH/back.png" ;
 }

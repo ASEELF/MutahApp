@@ -81,6 +81,7 @@ flutter:
      - assets/icons/profile_outlined.png
      - assets/icons/schedule.png
      - assets/icons/search.png
+     - assets/icons/back.png
      - assets/fonts/markazi/MarkaziText-Bold.ttf
      - assets/fonts/markazi/MarkaziText-Medium.ttf
      - assets/fonts/markazi/MarkaziText-Regular.ttf

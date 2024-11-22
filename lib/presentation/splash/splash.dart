@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mutahapplication/app/background.dart';
 import 'package:mutahapplication/presentation/resources/assets_manager.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
@@ -22,7 +23,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   _goNext() {
-    Navigator.pushReplacementNamed(context, Routes.loginRoute);
+    Get.offNamed(Routes.loginRoute);
   }
 
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AnnouncementsPage extends StatelessWidget {
-  const AnnouncementsPage({Key? key}) : super(key: key);
+class SynchronizationRequestPage extends StatelessWidget {
+  const SynchronizationRequestPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class AnnouncementsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text(
-          'Announcements',
+          'SynchronizationRequestPage',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -28,7 +28,7 @@ class AnnouncementsPage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Announcements Page',
+          'Synchronization Request Page',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,

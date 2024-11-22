@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mutahapplication/presentation/classes/navigation_helper.dart';
 import 'package:mutahapplication/presentation/controllers/search_controller.dart';
 import 'package:mutahapplication/presentation/models/grid_item_model.dart';
+import 'package:mutahapplication/presentation/navigation_helper/navigation_helper.dart';
 import 'package:mutahapplication/presentation/resources/assets_manager.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
-import 'package:mutahapplication/presentation/widgets/bottom_nav_bar_widget.dart';
-import 'package:mutahapplication/presentation/widgets/custom_grid_builder_widget.dart';
-import 'package:mutahapplication/presentation/widgets/header_widget.dart';
+import 'package:mutahapplication/presentation/resources/string_manager.dart';
+import 'package:mutahapplication/presentation/widgets/gridView_homePage/custom_grid_builder_widget.dart';
+import 'package:mutahapplication/presentation/widgets/header_home_widget/header_widget.dart';
 import 'package:mutahapplication/app/background.dart';
-import 'package:mutahapplication/presentation/widgets/search_bar/search_result_widget.dart';
+import 'package:mutahapplication/presentation/widgets/navigation%20bar/bottom_nav_bar_widget.dart';
 import 'package:mutahapplication/presentation/widgets/search_bar/search_widget.dart';
 
 class MainView extends StatefulWidget {
@@ -21,14 +21,15 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   final List<GridItem> items = [
-    GridItem(title: 'طلباتي', iconPath: IconAssets.myOrders),
-    GridItem(title: 'البرنامج الدراسي', iconPath: IconAssets.schedule),
-    GridItem(title: 'الخطة الأكاديمية', iconPath: IconAssets.academicPlan),
-    GridItem(title: 'رسوم الساعات', iconPath: IconAssets.registrationFees),
-    GridItem(title: 'سجل العلامات', iconPath: IconAssets.marksRecord),
+    GridItem(title: AppStrings.myRequests, iconPath: IconAssets.myOrders),
+    GridItem(title:AppStrings.schedule, iconPath: IconAssets.schedule),
+    GridItem(title: AppStrings.academicPlan, iconPath: IconAssets.academicPlan),
+    GridItem(title: AppStrings.hoursFees, iconPath: IconAssets.registrationFees),
+    GridItem(title: AppStrings.marks, iconPath: IconAssets.marksRecord),
   ];
   final SearchTextController searchController = Get.put(SearchTextController());
   int _currentIndex = 1;
+
   // Using NavigationHelper to navigate based on the selected index
   void _onItemTapped(int index) {
     setState(() {
@@ -40,6 +41,12 @@ class _MainViewState extends State<MainView> {
   }
   @override
   Widget build(BuildContext context) {
+
+    // Schedule unfocus after the current frame is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      FocusManager.instance.primaryFocus?.unfocus();
+    });
+
     return BackgroundWidget(
       child: Directionality(
         textDirection: TextDirection.rtl,

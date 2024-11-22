@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mutahapplication/presentation/models/grid_item_model.dart';
+import 'package:mutahapplication/presentation/navigation_helper/navigation_helper.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
-import 'package:mutahapplication/presentation/widgets/grid_item_widget.dart';
+import 'package:mutahapplication/presentation/widgets/gridView_homePage/grid_item_widget.dart';
+
 
 class CustomGridViewBuilder extends StatelessWidget {
   final List<GridItem> items;
@@ -25,12 +28,25 @@ class CustomGridViewBuilder extends StatelessWidget {
       itemCount: items.length,
       itemBuilder: (context, index) {
         final item = items[index];
-        return GridItemWidget(
-          title: item.title,
-          iconPath: item.iconPath,
-          backgroundColor: ColorManager.white,
+        final route = NavigationRoutes.routes[item.title];
+
+        return GestureDetector(
+          onTap: () {
+            if (route != null) {
+              print('Navigating to: $route for item: ${item.title}');
+              Get.toNamed(route);
+            } else {
+              print('No route defined for: ${item.title}');
+            }
+          },
+          child: GridItemWidget(
+            title: item.title,
+            iconPath: item.iconPath,
+            backgroundColor: ColorManager.white,
+          ),
         );
       },
     );
   }
 }
+

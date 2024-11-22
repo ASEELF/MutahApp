@@ -18,7 +18,10 @@ class AppStrings {
   static const String myProfile = "حسابي";
   static const String announcements = "الإعلانات";
   static const String search = "بحث";
-
+  static const String substituteCourseRequest= "طلب تسجيل مادة بديلة";
+  static const String increasingAcademicLoadRequest = "طلب زيادة العبئ الدراسي";
+  static const String postponingStudiesRequest= "طلب تأجيل فصل";
+  static const String synchronizationCoursesRequest="طلب مزامنة مواد";
 
 
 

@@ -60,7 +60,7 @@ TextStyle getSecondSemiBoldStyle(
 // bold text style for 2 fonts
 
 TextStyle getFirstBoldStyle(
-    {double fontSize = FontSize.s34, required Color color}) {
+    {double fontSize = FontSize.s32, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.firstFontFamily, FontWeightManager.bold, color);
 }

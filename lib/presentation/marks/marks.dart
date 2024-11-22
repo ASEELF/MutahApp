@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class AnnouncementsPage extends StatelessWidget {
-  const AnnouncementsPage({Key? key}) : super(key: key);
+class MarksPage extends StatelessWidget {
+  const MarksPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +10,7 @@ class AnnouncementsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text(
-          'Announcements',
+          'MarksPage',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -21,14 +20,13 @@ class AnnouncementsPage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Get.back();
-
+            Navigator.pop(context);
           },
         ),
       ),
       body: Center(
         child: Text(
-          'Announcements Page',
+          'Marks Page',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
