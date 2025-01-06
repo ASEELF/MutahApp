@@ -38,6 +38,15 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   get: ^4.6.5
   flutter_typeahead: ^4.0.1
+  url_launcher: ^6.1.9
+  http:
+  dropdown_button2: ^2.3.9
+  pdf: ^3.11.0
+  printing: ^5.10.0
+  dartarabic: ^0.3.1
+  arabic_font: ^0.0.9
+
+
 
 dev_dependencies:
   flutter_test:
@@ -66,7 +75,11 @@ flutter:
      - assets/images/splash_logo.png
      - assets/images/background_screen.png
      - assets/images/profile_avatar.png
+     - assets/images/new-female-avatar.png
+     - assets/images/new-male-avatar.png
      - assets/icons/academic_plan.png
+     - assets/icons/Mask_group.png
+     - assets/icons/log-out.png
      - assets/icons/announcement_filled.png
      - assets/icons/announcement_outlined.png
      - assets/icons/fees_registration.png
@@ -97,6 +110,7 @@ flutter:
      - assets/fonts/kufam/Kufam-Regular.ttf
      - assets/fonts/kufam/Kufam-SemiBold.ttf
      - assets/fonts/kufam/Kufam-SemiBoldItalic.ttf
+     - assets/fonts/cairo/Cairo-Medium.ttf
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

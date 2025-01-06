@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:get/get.dart';
+import 'package:mutahapplication/presentation/controllers/search_controller.dart';
 import 'package:mutahapplication/presentation/resources/assets_manager.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
 import 'package:mutahapplication/presentation/resources/routes_manager.dart';
@@ -21,6 +22,7 @@ class CustomNavBar extends StatefulWidget {
 
 class _CustomNavBarState extends State<CustomNavBar> {
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  final SearchTextController searchController = Get.find<SearchTextController>();
 
   // Handle item tap and navigate to the correct page
   void onItemTapped(int index) {
@@ -36,17 +38,30 @@ class _CustomNavBarState extends State<CustomNavBar> {
 
           setState(() {
             widget.onItemTapped(1);
+            searchController.clearSearchText();
+
           });
         });
         break;
       case 1:
-        Get.toNamed(Routes.mainRoute);
+        Get.toNamed(Routes.mainRoute)?.then((_) {
+          searchController.clearSearchText();
+
+        });
+        // Get.toNamed(Routes.mainRoute);
         break;
       case 2:
+
         Get.toNamed(Routes.announcementsRoute)?.then((_) {
           setState(() {
             widget.onItemTapped(1);
+            searchController.clearSearchText();
+
           });
+        // Get.toNamed(Routes.announcementsRoute)?.then((_) {
+        //   setState(() {
+        //     widget.onItemTapped(1);
+        //   });
         });
         break;
       default:

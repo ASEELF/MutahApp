@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mutahapplication/presentation/resources/assets_manager.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
-import 'package:mutahapplication/presentation/resources/string_manager.dart';
 import 'package:mutahapplication/presentation/resources/styles_manager.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
+  final TextStyle? titleStyle; // Optional style for the title
 
   const AppBarWidget({
     Key? key,
     required this.title,
+    this.titleStyle, // Allow passing a custom style
   }) : super(key: key);
 
   @override
@@ -19,30 +20,38 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       backgroundColor: ColorManager.green,
       elevation: 0,
-      title: Padding(
-        padding: const EdgeInsets.only(top: 20.0), // Space above the arrow and title
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+      flexibleSpace: Padding(
+        padding: const EdgeInsets.only(top: 26.0), // Space above the title
+        child: Stack(
           children: [
-            IconButton(
-              icon: Image.asset(
-                IconAssets.back,
-                width: 28.0,
-                height: 28.0,
-                color: Colors.white,
+            // Back button aligned to the left
+            Positioned(
+              right: 0,
+              top: 0,
+              bottom: 0,
+              child: IconButton(
+                icon: Image.asset(
+                  IconAssets.back,
+                  width: 28.0,
+                  height: 28.0,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Get.back();
+                },
               ),
-              onPressed: () {
-                Get.back();
-              },
             ),
-            // Expanded(
-            //   child:
-            const SizedBox(width:108),
-                Text(
-                title,
-                style: getFirstBoldStyle(color: ColorManager.white),
-                textAlign: TextAlign.center,
+            // Title centered in the AppBar
+            Positioned.fill(
+              child: Align(
+                alignment: Alignment.center,
+                child: Text(
+                  title,
+                  style: titleStyle ?? getFirstBoldStyle(color: ColorManager.white), // Use custom or default style
+                  textAlign: TextAlign.center,
+                ),
               ),
+            ),
           ],
         ),
       ),

@@ -26,7 +26,7 @@ class _BuildRememberMeCheckboxState extends State<BuildRememberMeCheckbox> {
         Row(
           children: [
             CustomSwitchExample(),
-            SizedBox(width: 10),
+            SizedBox(width: 15),
              Text(AppStrings.saveInfo,
             style: getFirstRegularStyle(color: ColorManager.black),
             ) ,

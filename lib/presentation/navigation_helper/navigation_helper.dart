@@ -10,13 +10,13 @@ class NavigationHelper {
   static void navigateToPage(BuildContext context, int index) {
     switch (index) {
       case 0:
-        Navigator.pushNamed(context, Routes.profileRoute); // Profile page
+        Navigator.pushNamed(context, Routes.profileRoute);
         break;
       case 1:
-        Navigator.pushNamed(context, Routes.mainRoute); // Home/Main page
+        Navigator.pushNamed(context, Routes.mainRoute);
         break;
       case 2:
-        Navigator.pushNamed(context, Routes.announcementsRoute); // Announcements page
+        Navigator.pushNamed(context, Routes.announcementsRoute);
         break;
       default:
         break;
@@ -33,8 +33,6 @@ class NavigationRoutes {
     AppStrings.marks: Routes.marks,
   };
 }
-
-
 class NavigationService {
   // A centralized method for navigation
   static void navigateTo(String routeName) {
@@ -43,6 +41,7 @@ class NavigationService {
     if (route != null) {
       print('Navigating to: $route');
       Get.toNamed(route);
+
     } else {
       print('No route found for: $routeName');
     }
