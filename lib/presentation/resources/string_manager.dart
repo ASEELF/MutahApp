@@ -92,6 +92,10 @@ static const String hoursFeesNeededHours="اختر عدد الساعات الم�
 
 
 static const String contactUs="تواصل معنا";
+  static const String noEligibleRequestsMessage = "لا يمكنك أن تقدم طلب تأجيل فصل لأنك في الفصل الأول من دراستك";
+static const String yes="نعم";
+static const String ok="حسنا";
+  static const String no="لا";
 
 
 

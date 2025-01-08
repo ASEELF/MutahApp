@@ -96,24 +96,7 @@ class _SynchronizationRequestPage extends State<SynchronizationRequestPage> {
                           left: 17.0,
                           child: ElevatedButton(
                             onPressed: () async {
-                              // if (controller.selectedReplacementCount.value == 0) {
-                              //   // Show an error if no radio button is selected
-                              //   ScaffoldMessenger.of(context).showSnackBar(
-                              //     SnackBar(content: Text('Please select the number of courses.')),
-                              //   );
-                              //   return;
-                              // }
-                              // // Validate course IDs
-                              // bool isValid = await controller.validateCourseIDs();
-                              //
-                              // if (isValid) {
-                              //   _showPopup(context); // Show popup if validation passes
-                              // } else {
-                              //   // Show an error message if validation fails
-                              //   ScaffoldMessenger.of(context).showSnackBar(
-                              //     SnackBar(content: Text('One or more course IDs are invalid.')),
-                              //   );
-                              // }
+
                               showPopup(
                                 context: context,
                                 title: AppStrings.synchronizationCoursesRequestpoUpTitle,

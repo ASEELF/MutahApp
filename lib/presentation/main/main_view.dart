@@ -27,6 +27,7 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final SearchTextController searchController = Get.put(SearchTextController());
+
   final GlobalKey<SearchBarWidgetState> searchWidgetKey = GlobalKey<SearchBarWidgetState>();
   final List<GridItem> items = [
     GridItem(title: AppStrings.myRequests, iconPath: IconAssets.myOrders),

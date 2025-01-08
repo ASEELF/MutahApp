@@ -9,8 +9,8 @@ void showPopup({
   String description="",
   required String primaryButtonText,
   required VoidCallback onPrimaryButtonPressed,
-  required String secondaryButtonText,
-  required VoidCallback onSecondaryButtonPressed,
+   String secondaryButtonText="",
+   VoidCallback? onSecondaryButtonPressed,
 }) {
   showDialog(
     context: context,
@@ -22,7 +22,7 @@ void showPopup({
         primaryButtonText: primaryButtonText,
         onPrimaryButtonPressed: onPrimaryButtonPressed,
         secondaryButtonText: secondaryButtonText,
-        onSecondaryButtonPressed: onSecondaryButtonPressed,
+        onSecondaryButtonPressed: onSecondaryButtonPressed!,
       );
     },
   );
