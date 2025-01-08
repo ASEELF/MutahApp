@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mutahapplication/presentation/resources/color_manager.dart';
@@ -6,11 +7,13 @@ import 'package:mutahapplication/presentation/resources/styles_manager.dart';
 class RequestItemWidget extends StatelessWidget {
   final String text;
   final String routeName;
+  final TextStyle? style; // Add a style parameter
 
   const RequestItemWidget({
     Key? key,
     required this.text,
     required this.routeName,
+    this.style, // Make it optional
   }) : super(key: key);
 
   @override
@@ -21,7 +24,7 @@ class RequestItemWidget extends StatelessWidget {
         onTap: () => Get.toNamed(routeName),
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-          padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(vertical: 22.0, horizontal: 24.0),
           decoration: BoxDecoration(
             color: ColorManager.white,
             borderRadius: BorderRadius.circular(12.0),
@@ -44,8 +47,7 @@ class RequestItemWidget extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Text(
               text,
-              style: getFirstSemiBoldStyle(color: ColorManager.lightBlack),
-              //textAlign: TextAlign.right,
+              style: style ?? getFirstSemiBoldStyle(color: ColorManager.lightBlack), // Use the provided style or a default one
             ),
           ),
         ),

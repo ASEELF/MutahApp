@@ -16,7 +16,7 @@ class SearchTextController extends GetxController {
     filterCourses();
   }
 
-  // filter courses based on the search query
+  // filter courses
   void filterCourses() {
     if (searchText.value.isEmpty) {
       filteredCourses.value = [];
@@ -27,10 +27,14 @@ class SearchTextController extends GetxController {
     }
   }
 
+  void clearSearchText() {
+    searchText.value = '';
+    filteredCourses.clear();
+  }
   @override
   void onInit() {
     super.onInit();
     filteredCourses.value = [];
   }
-}
 
+}

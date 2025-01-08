@@ -30,7 +30,7 @@ TextStyle getSecondRegularStyle(
 // medium text style for 2 fonts
 
 TextStyle getFirstMediumStyle(
-    {double fontSize = FontSize.s22, required Color color}) {
+    {double fontSize = FontSize.s23, required Color color}) {
   return _getTextStyle(
       fontSize, FontConstants.firstFontFamily, FontWeightManager.medium, color);
 }

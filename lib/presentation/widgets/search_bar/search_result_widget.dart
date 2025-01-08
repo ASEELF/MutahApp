@@ -75,7 +75,7 @@ class SearchResultWidget extends StatelessWidget {
                   }
                 },
                 child: Container(
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.all(21),
                   child: Text(
                     course,
                     style: TextStyle(fontSize: 16),

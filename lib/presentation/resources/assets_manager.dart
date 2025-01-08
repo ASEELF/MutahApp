@@ -5,6 +5,8 @@ class ImageAssets {
   static const String splashLogo = "$IMAGE_PATH/splash_logo.png";
   static const String background = "$IMAGE_PATH/background_screen.png";
   static const String avatarFemale = "$IMAGE_PATH/profile_avatar.png";
+  static const String newAvatarFemale = "$IMAGE_PATH/new-female-avatar.png";
+  static const String newAvatarMale = "$IMAGE_PATH/new-male-avatar.png";
 }
 
 class IconAssets{
@@ -24,4 +26,9 @@ class IconAssets{
   static const String menu ="$ICON_PATH/menu.png" ;
   static const String lock ="$ICON_PATH/lock.png" ;
   static const String back ="$ICON_PATH/back.png" ;
+  static const String done ="$ICON_PATH/Mask_group.png" ;
+  static const String logOut ="$ICON_PATH/log-out.png" ;
+
+
+
 }

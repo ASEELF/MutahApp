@@ -2,11 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:mutahapplication/presentation/academic_plan/academic_plan.dart';
 import 'package:mutahapplication/presentation/announcements/announcement.dart';
+import 'package:mutahapplication/presentation/announcements/each_announcement_page.dart';
+import 'package:mutahapplication/presentation/contact/contact_us.dart';
 import 'package:mutahapplication/presentation/forgot_password/forgot_password.dart';
 import 'package:mutahapplication/presentation/hours_fees/hours_fees.dart';
 import 'package:mutahapplication/presentation/increase_academic_load/increase_academic_load.dart';
 import 'package:mutahapplication/presentation/login/login.dart';
 import 'package:mutahapplication/presentation/main/main_view.dart';
+import 'package:mutahapplication/presentation/marks/eachSemesterMarkPage.dart';
 import 'package:mutahapplication/presentation/marks/marks.dart';
 import 'package:mutahapplication/presentation/my_requests/my_resuests.dart';
 import 'package:mutahapplication/presentation/postponing_studies/posponing_studies_request.dart';
@@ -34,7 +37,9 @@ class Routes {
   static const String increasingAcademicLoadRequest= "/increasingAcademicLoadRequest";
   static const String postponingStudiesRequest= "/postponingStudiesRequest";
   static const String synchronizationCoursesRequest= "/synchronizationCoursesRequest";
-
+  static const String eachAnnouncementPage= "/eachAnnouncementPage";
+  static const String eachMarksPage = "/eachMarksPage";
+  static const String contactUsPage="/contactPage";
 
 }
 
@@ -71,7 +76,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) =>  PosponingStudiesRequestPage());
       case Routes.synchronizationCoursesRequest:
         return MaterialPageRoute(builder: (_) =>  SynchronizationRequestPage());
-
+      case Routes.eachAnnouncementPage:
+        return MaterialPageRoute(builder: (_) =>  AnnouncementDetailPage(content: " ",));
+      case Routes.eachMarksPage :
+        return MaterialPageRoute(builder: (_) =>  EachSemesterMarksPage());
+      case Routes.contactUsPage:
+        return MaterialPageRoute(builder: (_) =>  ContactUsPage());
       default:
         return unDefinedRoute();
     }
